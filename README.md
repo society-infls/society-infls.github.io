@@ -1,2 +1,1 @@
-# society-infls.github.io
-Society Web-page
+# Society of Informatics and Learning Systems
