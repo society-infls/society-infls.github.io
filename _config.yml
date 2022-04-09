@@ -1,0 +1,107 @@
+# _config.yml
+
+title: Society of Informatics and Learning Systems
+email: society-infls@gmail.com
+repository: society-infls/society-infls.github.io
+description: >
+    A club for deep-learners, problem solvers and AI professionals.
+baseurl: ""
+url: https://society-infls.github.io
+timezone: India/Kolkata
+
+social:
+    twitter: https://twitter.com/society_infls
+    discord: https://discord.gg/9GvpKq8HJA
+    linkedin: https://www.linkedin.com/company/society-of-informatics-and-learning-systems/
+    youtube: https://www.youtube.com/
+calendar:
+    embed: https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FKolkata&amp;src=c29jaWV0eS5pbmZsc0BnbWFpbC5jb20&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uaW5kaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%234285F4&amp;showPrint=0&amp;showTabs=1&amp;showCalendars=0&amp;showTz=0&amp;showDate=0&amp;showTitle=0
+    subscribe: https://calendar.google.com/calendar/ical/f9ebvqi7kqjtt08u5hs39aqfk8%40group.calendar.google.com/public/basic.ics
+
+plugins:
+    - jekyll-feed
+    - jekyll-github-metadata
+    - jekyll-redirect-from
+    - jekyll-seo-tag
+    - jekyll-sitemap
+    - jemoji
+
+markdown: kramdown
+
+highlighter: rouge
+
+feed:
+    path: atom.xml
+    collections:
+        - articles
+        - cheatsheets
+        - sessions
+        - workshops
+
+kramdown:
+    input: GFM
+
+sass:
+    style: compressed
+
+include: ["_pages", "_shortlinks"]
+exclude: ["run.sh", "CONTRIBUTING.MD", "README.md", "Gemfile"]
+
+collections_dir: content
+collections:
+    articles:
+        output: true
+        index_path: /kb/articles/
+        permalink: /kb/:collection/:title
+    cheatsheets:
+        output: true
+        index_path: /kb/cheatsheets/
+        permalink: /kb/:collection/:title
+    profiles:
+        output: true
+        index_path: /kb/profiles/
+        permalink: /kb/:collection/:title
+    sessions:
+        output: true
+        index_path: /sessions/
+        permalink: /:collection/:title
+    workshops:
+        output: true
+        index_path: /kb/workshops/
+        permalink: /kb/:collection/:title
+
+defaults:
+    -
+        scope:
+            path: "_articles"
+        values:
+            layout: "content"
+            type: "article"
+            author: "anon"
+    -
+        scope:
+            path: "_cheatsheets"
+        values:
+            layout: "content"
+            type: "cheatsheet"
+            author: "anon"
+    -
+        scope:
+            path: "_profiles"
+        values:
+            layout: "profile"
+            type: "profile"
+    -
+        scope:
+            path: "_sessions"
+        values:
+            layout: "content"
+            type: "session"
+            author: "The SoILS Team"
+    -
+        scope:
+            path: "_workshops"
+        values:
+            layout: "content"
+            type: "workshop"
+            author: "anon"
